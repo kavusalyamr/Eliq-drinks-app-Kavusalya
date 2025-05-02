@@ -41,3 +41,18 @@ A core design decision was to make the UI behavior and visibility configurable v
     - Allow real-time switching between light/dark/custom themes via JSON config.
     - Enable toggling visibility of navbar, banner, or footer through JSON.
     - Cover core components and services using Karma/Jasmine or Jest.
+
+# Deployment url
+
+    - https://kavusalyamr.github.io/Eliq-drinks-app-Kavusalya/
+
+# Issues with deployment url
+
+    - I followed the following steps to deploy the app to github pages
+        - Correctly configured the <base href> in the Angular application to match the repository name using the --base-href flag during the build process: ng build --configuration production --base-href /Eliq-drinks-app-Kavusalya/
+        - Verified that the index.html file in the dist/eliq-drinks-app folder contains the correct <base href>.
+        - Used the angular-cli-ghpages package to automate the deployment to the gh-pages branch:
+            npx angular-cli-ghpages --dir=dist/eliq-drinks-app
+        - Inspected the gh-pages branch to confirm that the built application files ( index.html, JavaScript, CSS, assets) were located at the root of the branch, and not within a subfolder.
+
+    - But I still can not see the running application on the deployment url
