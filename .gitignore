@@ -1,0 +1,39 @@
+# Ignore node_modules, which contains all the installed packages
+node_modules/
+
+# Ignore the /dist folder, which contains the built output (except for the .nojekyll file)
+dist/
+!dist/.nojekyll
+
+# Ignore temporary files created by Angular CLI
+.angular/cache/
+.angular/cli.config.json
+.angular/compat/
+
+# Ignore IDE-specific files
+.idea/
+*.suo
+*.ntvsolution*
+*.njsproj
+*.sln
+*.swp
+*.~
+tmp/
+temp/
+out/
+build/
+
+# Ignore log files
+*.log
+
+# Ignore OS-specific files
+._*
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Ignore package manager lock files, but not yarn.lock
+package-lock.json
+
+# Ignore optional environment file
+.env
