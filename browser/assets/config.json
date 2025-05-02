@@ -1,0 +1,29 @@
+{
+  "appTitle": "eliq-drinks-app 🍸",
+  "theme": {
+    "primaryColor": "#6a1b9a",
+    "accentColor": "#ffca28",
+    "fontFamily": "Roboto, sans-serif"
+  },
+  "brandings": [
+    {
+      "brandName": "brandA",
+      "logoUrl": "assets/logoA.avif",
+      "style": "/themes/brandA-theme.scss"
+    },
+    {
+      "brandName": "brandB",
+      "logoUrl": "assets/logoB.avif"
+    }
+  ],
+  "components": {
+    "drinkList": {
+      "title": "Our Cocktails",
+      "gridColumns": 2
+    },
+    "drinkDetail": {
+      "showInstructionsLanguages": ["EN", "ES", "FR"],
+      "showIngredients": true
+    }
+  }
+}
