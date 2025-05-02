@@ -1,0 +1,32 @@
+<section class="banner">
+  <h2 class="banner__title">Discover Amazing Cocktails</h2>
+  <p class="banner__subtitle">Find the perfect drink for any occasion.</p>
+</section>
+<div class="drink-grid">
+  <a
+    class="drink-grid__card"
+    *ngFor="let drink of pagedDrinks"
+    [routerLink]="['/drink', drink.idDrink]"
+  >
+    <img
+      class="drink-grid__image"
+      [src]="drink.strDrinkThumb"
+      [alt]="drink.strDrink"
+    />
+    <h3 class="drink-grid__title">{{ drink.strDrink }}</h3>
+  </a>
+</div>
+
+<!-- Pagination Controls -->
+<div class="pagination">
+  <button (click)="changePage(currentPage - 1)" [disabled]="currentPage === 1">
+    Prev
+  </button>
+  <span>Page {{ currentPage }}</span>
+  <button
+    (click)="changePage(currentPage + 1)"
+    [disabled]="currentPage * pageSize >= drinks.length"
+  >
+    Next
+  </button>
+</div>

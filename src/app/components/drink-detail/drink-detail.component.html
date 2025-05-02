@@ -1,0 +1,36 @@
+<div *ngIf="drink" class="drink-detail">
+  <a
+    class="drink-detail__back-button"
+    [routerLink]="['']"
+    aria-label="Back to list"
+  >
+    <img src="assets/back.svg" alt="Back" />
+  </a>
+
+  <img
+    class="drink-detail__image"
+    [src]="drink.strDrinkThumb"
+    alt="{{ drink.strDrink }}"
+  />
+  <h2 class="drink-detail__title">{{ drink.strDrink }}</h2>
+
+  <select class="drink-detail__select" [(ngModel)]="selectedLang">
+    <option
+      class="drink-detail__language"
+      *ngFor="let lang of languages"
+      [value]="lang.value"
+    >
+      {{ lang.label }}
+    </option>
+  </select>
+
+  <p class="drink-detail__instructions">
+    {{ drink[selectedLang] || "No instructions available." }}
+  </p>
+
+  <ul class="drink-detail__ingredient-list">
+    <li class="drink-detail__ingredient" *ngFor="let i of ingredientIndices">
+      {{ drink["strMeasure" + i] || "" }} {{ drink["strIngredient" + i] }}
+    </li>
+  </ul>
+</div>

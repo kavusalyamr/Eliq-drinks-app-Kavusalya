@@ -1,0 +1,331 @@
+.navbar {
+  background-color: rgb(40, 6, 6);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  flex-wrap: wrap;
+
+  &__left {
+    display: flex;
+    align-items: center;
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    order: 2;
+  }
+
+  &__logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+  }
+
+  &__logo-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 0.5rem;
+  }
+
+  &__logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  &__search-container {
+    order: 3;
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__search {
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    width: 80%;
+    max-width: 400px;
+    opacity: 0.7;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+
+    &__left,
+    &__right {
+      width: 100%;
+      justify-content: center;
+      margin-bottom: 0.5rem;
+    }
+
+    &__search-container {
+      width: 100%;
+      justify-content: center;
+    }
+
+    &__search {
+      width: 100%;
+    }
+  }
+}
+
+.banner {
+  background-image: url("/assets/banner.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+
+  &__title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+
+  &__subtitle {
+    font-size: 1.2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+}
+
+/* Responsive Card Grid Styles */
+.drink-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.drink-grid__card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  padding: 12px;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.drink-grid__card:hover {
+  transform: translateY(-3px);
+}
+
+.drink-grid__image {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.drink-grid__title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem;
+  font-family: "Segoe UI", sans-serif;
+
+  button {
+    background-color: #4a2f2f;
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    border-radius: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &:hover:not(:disabled) {
+      background-color: #2f1e1e;
+      transform: translateY(-2px);
+    }
+
+    &:disabled {
+      background-color: #ccc;
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+  }
+
+  span {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    padding: 0.5rem 1rem;
+    background: #f7f7f7;
+    border-radius: 20px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.05);
+  }
+
+  @media (max-width: 600px) {
+    flex-direction: column;
+    gap: 0.5rem;
+
+    button,
+    span {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+.drink-detail {
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin: 2rem auto;
+  max-width: 800px;
+  padding: 2rem;
+  font-family: "Segoe UI", sans-serif;
+
+  &__header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  &__image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    font-size: 2rem;
+    color: #2d3e50;
+    margin-bottom: 0.5rem;
+  }
+
+  &__language {
+    margin: 1.5rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    label {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  &__select {
+    padding: 0.5rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+
+  &__instructions {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #444;
+    margin-bottom: 2rem;
+  }
+
+  &__ingredients {
+    background: #f2f2f2;
+    padding: 1rem;
+    border-radius: 12px;
+  }
+
+  &__subtitle {
+    font-size: 1.5rem;
+    color: #4a2f2f;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    border-bottom: 2px solid #e0e0e0;
+    padding-bottom: 0.5rem;
+  }
+
+  &__ingredient-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1rem;
+  }
+
+  &__ingredient {
+    padding: 0.5rem 0;
+    font-size: 1rem;
+    color: #555;
+    border-bottom: 1px solid #f0f0f0;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  @media (max-width: 600px) {
+    padding: 1rem;
+
+    &__title {
+      font-size: 1.5rem;
+    }
+
+    &__instructions {
+      font-size: 1rem;
+    }
+
+    &__image {
+      width: 120px;
+      height: 120px;
+    }
+  }
+}
+
+.drink-detail__back-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: transparent;
+  border-radius: 50%;
+  text-decoration: none;
+  margin-bottom: 1rem;
+
+  img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+
+  @media (max-width: 600px) {
+    width: 2rem;
+    height: 2rem;
+
+    img {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+  }
+}
